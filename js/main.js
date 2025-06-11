@@ -28,8 +28,8 @@ function validName(name) {
 }
 
 function validURL(url) {
-    var regex = /^https?:\/\/(www\.)?([a-zA-Z0-9]+(-[a-zA-Z0-9]+)*\.)+[a-zA-Z]{2,}(\/)?$/;
-    if (regex.test(url)) {
+    var regex = /^https?:\/\/(www\.)?[a-zA-Z0-9\.\-]{1,63}[a-zA-Z]{2,}(\/[a-zA-Z0-9\-\/]*)?$/;
+    if (regex.test(url) && !url.includes('..') && !url.includes('.-') && !url.includes('-.') && !url.includes('--') && !url.includes('//.') && !url.includes('//-')) {
         siteURL.classList.remove('is-invalid');
         siteURL.classList.add('is-valid');
         validURLMessage.classList.remove('invalid-tooltip');
@@ -41,7 +41,7 @@ function validURL(url) {
     siteURL.classList.add('is-invalid');
     validURLMessage.classList.remove('valid-tooltip');
     validURLMessage.classList.add('invalid-tooltip', 'd-block');
-    validURLMessage.innerHTML = 'Please enter a valid URL like https://example.com or http://www.site.org/ or https://blog.site-sub.app';
+    validURLMessage.innerHTML = 'Please enter a valid URL like https://example.com or http://www.site.org/path/path-path or https://blog.site-sub.app';
     return false;
 }
 
