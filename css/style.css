@@ -1,0 +1,91 @@
+/* ****************************** start general css ****************************** */
+h1 {
+    font-family: "Pacifico", cursive;
+}
+
+h2 {
+    font-family: "Righteous", cursive;
+}
+
+body {
+    font-family: "PT Sans Caption", sans-serif;
+    background-color: #f7ecde;
+}
+
+/* ****************************** end general css ****************************** */
+/* ****************************** start header ****************************** */
+header h1 {
+    font-size: 3.125rem;
+    position: relative;
+    width: fit-content;
+    color: #352e28;
+}
+
+header h1::after {
+    content: '';
+    background-color: #fec260;
+    position: absolute;
+    bottom: 10px;
+    left: 0;
+    right: 0;
+    height: 25%;
+    z-index: -1;
+    transition: height 0.4s ease-in-out;
+    -webkit-transition: height 0.4s ease-in-out;
+    -moz-transition: height 0.4s ease-in-out;
+    -ms-transition: height 0.4s ease-in-out;
+    -o-transition: height 0.4s ease-in-out;
+}
+
+header h1:hover::after {
+    height: 50%;
+}
+
+::selection {
+    background-color: #fec260;
+    color: #000;
+}
+
+/* ****************************** end header ****************************** */
+/* ****************************** start book form ****************************** */
+.book-form {
+    border-block: 2px dotted;
+}
+
+.book-form h2 {
+    color: transparent;
+    background-image: linear-gradient(to right, #3ca55c, #b5ac49);
+    background-clip: text;
+    -webkit-background-clip: text;
+    font-weight: 300;
+}
+
+.book-form .btn-custom {
+    --bs-btn-color: #fff;
+    --bs-btn-hover-color: #fff;
+    --bs-btn-bg: #d1512d;
+    --bs-btn-border-color: #d1512d;
+    --bs-btn-hover-bg: #bb4120;
+    --bs-btn-hover-border-color: #a03315;
+}
+
+.form-control:focus {
+    color: #212529;
+    background-color: #fff;
+    border-color: #d99c39;
+    outline: 0;
+    box-shadow: 0 0 0 0.25rem #fec26055;
+}
+
+/* ****************************** end book form ****************************** */
+/* ****************************** start table ****************************** */
+.table .btn-custom {
+    --bs-btn-color: #fff;
+    --bs-btn-hover-color: #fff;
+    --bs-btn-bg: #9eb23b;
+    --bs-btn-border-color: #9eb23b;
+    --bs-btn-hover-bg: #8a9e23;
+    --bs-btn-hover-border-color: #6e8018;
+}
+
+/* ****************************** end table ****************************** */
